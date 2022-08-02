@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/style.css" />
+    <title>Student Details</title>
+    <style>
+     
+        .table-container{
+            border: 2px solid greenyellow;
+            padding: 2rem 3rem;
+        }
+
+        table td,tr,th{
+            border: 1px solid gold;
+            padding: 0.5rem 1rem;
+            text-align: center;
+        }
+        th{
+            background-color: gainsboro;
+            font-size: 1.3rem;
+            font-weight: bold;
+        }
+        td{
+            background-color: cornsilk;
+            font-size: 1.1rem;
+            font-weight: bold;
+
+        }
+        h1{
+            text-align: center;
+            margin-bottom: 10px;
+            color: antiquewhite;
+        }
+        span{
+            color: crimson;
+            font-size: 0.7rem;
+            cursor: pointer;
+        }
+        .insert{
+            margin-top: 1rem;
+            text-align: center;
+        }
+        button{
+            padding: 0.5rem 1rem;
+            cursor: pointer;
+        }
+        .fbtn{
+            padding: 0.7rem 1rem;
+            border-radius: 20px;
+            border: none;
+            background-color: slategrey;
+            color: white;
+            font-weight: bold;
+            letter-spacing: 1.5px;
+            cursor: pointer;
+        }
+
+        .update{
+            background-color: darkseagreen;
+        }        
+
+        .delete{
+            background-color:crimson;
+        }  
+
+        @media screen and (max-width:705px){
+            .table-container{
+            padding: 2rem 1rem;
+        }
+        }
+        @media screen and (max-width:640px){
+            .table-container{
+                overflow-y: auto;
+        }
+    }
+    </style>
+</head>
+<body> 
+    <div class="table-container">
+        <h1>Student Details</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>S no.</th>
+                    <th>Name</th>
+                    <th>Age</th>
+                    <th>Email</th>
+                    <th colspan="2">Controls</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% 
+                    var count = 0
+                    data.forEach((item) =>{ 
+                        count++
+                    %>
+                    <tr>
+                        <td><%= count %></td>
+                        <td><%= item.name %></td>
+                        <td><%= item.age %></td>
+                        <td><%= item.email %></td>
+                        <td>
+                            <form action="/student/edit/<%= item._id%>" method="get">
+                                <button class="fbtn update" type="submit">UPDATE</button>
+                            </form>
+                        </td>
+                        <td>
+                            <form action="/student/delete/<%= item._id%>" method="post">
+                                <button class="fbtn delete" type="submit">DELETE</button>
+                            </form>
+                        </td>
+                    </tr>
+                    <% })%>
+            </tbody>
+        </table>
+        <form method="get" action="/student/insert">
+            <div class="insert">
+                <button class="fbtn" type="submit">Insert Student</button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

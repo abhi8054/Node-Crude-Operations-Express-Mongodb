@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/style.css" />
+    <title>Add Student</title>
+
+    <style>
+        .myform{
+            width: 70%;
+            color: aliceblue;
+        }
+        .container{
+            min-width: 60%;
+            padding: 3rem;
+            border: 2px solid greenyellow;
+        }
+        .form-container{
+            display: flex;
+            flex-direction: column;
+            gap:1rem;
+        }
+        .form-data{
+            display: flex;
+            flex-direction: column;
+        }
+        .form-data label{
+            margin-bottom: 5px;
+        }
+        .form-data input{
+            height: 35px;
+            border: none;
+            outline: none;
+            padding: 0.4rem 0.6rem;
+            border-radius: 10px;
+            width: 100%;
+        }
+        h1{
+            text-align: center;
+        }
+        .fbtn{
+            padding: 0.7rem 0;
+            border-radius: 20px;
+            border: none;
+            background-color: slategrey;
+            color: white;
+            font-weight: bold;
+            letter-spacing: 1.5px;
+            cursor: pointer;
+        }
+
+    </style>
+</head>
+<body>
+    <form class="myform" action="/student/insert" method="post">
+    <div class="container">
+        <div class="form-container">
+            <h1>Add Student</h1>
+            <div class="form-data">
+                <label>Enter Name</label>
+                <input id="name" type="text" name="name" />
+            </div>
+            <div class="form-data">
+                <label>Enter Age</label>
+                <input id="number" type="Number" name="age"/>
+            </div>
+            <div class="form-data">
+                <label>Enter Email</label>
+                <input id="email" type="email" name="email" />
+            </div>
+            <div class="form-data">
+                <button class="fbtn" type="submit"> Add Student </button>
+            </div>
+        </div>
+    </div>
+    </form>
+</body>
+</html>

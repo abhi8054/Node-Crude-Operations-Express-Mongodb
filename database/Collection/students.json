@@ -1,0 +1,36 @@
+[{
+  "_id": {
+    "$oid": "62e90df387a7655192b871c5"
+  },
+  "name": "Abhishek PPoddar",
+  "email": "abhishek@gmail.com",
+  "age": 21
+},{
+  "_id": {
+    "$oid": "62e90e8726658e958e4a8326"
+  },
+  "name": "Poddar",
+  "email": "poddar@gmail.com",
+  "age": 20
+},{
+  "_id": {
+    "$oid": "62e90ea826658e958e4a832a"
+  },
+  "name": "Pinky",
+  "age": 21,
+  "email": "pinky@gnail.com"
+},{
+  "_id": {
+    "$oid": "62e93940dff0e97c59925364"
+  },
+  "name": "Ram Sharma",
+  "age": 35,
+  "email": "ram@gmail.com"
+},{
+  "_id": {
+    "$oid": "62e93965dff0e97c59925367"
+  },
+  "name": "Sunil Kumar",
+  "age": 26,
+  "email": "sunil@gmail.com"
+}]
